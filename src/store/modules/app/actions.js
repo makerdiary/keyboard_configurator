@@ -11,16 +11,20 @@ const actions = {
    * fetchKeyboards - fetch keyboard list from API
    */
   async fetchKeyboards({ commit }) {
-    const r = await axios.get(backend_keyboards_url);
-    if (r.status === 200) {
-      const exclude = getExclusionList();
-      const results = r.data.filter(keeb => {
-        return isUndefined(exclude[keeb]);
-      });
-      commit('setKeyboards', results);
-      return results;
-    }
-    return [];
+    const results = ["m60", "hhkb"];
+    commit('setKeyboards', results);
+    return results;
+
+    // const r = await axios.get(backend_keyboards_url);
+    // if (r.status === 200) {
+    //   const exclude = getExclusionList();
+    //   const results = r.data.filter(keeb => {
+    //     return isUndefined(exclude[keeb]);
+    //   });
+    //   commit('setKeyboards', results);
+    //   return results;
+    // }
+    // return [];
   },
   /**
    * load the default keymap for the currently selected keyboard
@@ -114,7 +118,8 @@ const actions = {
       return p;
     }
     return axios
-      .get(backend_keyboards_url + '/' + state.keyboard)
+      .get(`layout/${state.keyboard}.json`)
+      // .get(backend_keyboards_url + '/' + state.keyboard)
       .then(resp => {
         commit('processLayouts', resp);
         return resp;

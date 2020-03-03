@@ -59,11 +59,13 @@
         <button
           id="load-default"
           :title="$t('loadDefault.title')"
-          @click="loadDefault"
+          @click="connect"
         >
-          {{ $t('loadDefault.label') }}
+          <font-awesome-icon icon="sync" size="lg" fixed-width />
+          auto detect
         </button>
         <button
+          v-if="false"
           id="compile"
           :title="$t('compile.title')"
           v-bind:disabled="compileDisabled"
@@ -94,6 +96,7 @@ import {
 } from '@/jquery';
 
 import { clearKeymapTemplate } from '@/common';
+import { webusb } from '@/webusb';
 
 export default {
   name: 'ControllerTop',
@@ -336,7 +339,7 @@ export default {
             throw err;
           }
         });
-      this.$store.dispatch('status/viewReadme', this.keyboard);
+      // this.$store.dispatch('status/viewReadme', this.keyboard);
       disableOtherButtons();
     },
     /**
@@ -368,6 +371,11 @@ export default {
           ? _keymapName.slice(this.keyboard.length + 1, _keymapName.length)
           : keymapName;
       compileLayout(this.keyboard, keymapName, this.layout);
+    },
+    connect() {
+      webusb.connect().then(() => {
+        webusb.send("hello");
+      })
     },
     updateFilter(filter) {
       this.$store.commit('app/setFilter', filter);

@@ -47,7 +47,7 @@
           >{{ $t('settingsPanel.toggleTutorial.label') }}</label
         >
       </div>
-      <div>
+      <div v-if="false">
         <toggle-button
           id="setting-toggle-tutorial"
           :value="tutorialEnabled"

@@ -5,7 +5,7 @@
       <div class="qmk-app-name">
         QMK Configurator
       </div>
-      <div class="bes-version">
+      <div v-if="false" class="bes-version">
         {{ $t('apiVersionPrefix') }}
         <span class="version-num">v{{ version }}</span>
       </div>
@@ -30,17 +30,17 @@
     </div>
     <div class="bes-controls" @click="clickSettings">
       <font-awesome-icon
-        v-if="!settingsPanelVisible"
+        v-if="false && !settingsPanelVisible"
         icon="chevron-left"
         fixed-width
       />
       <font-awesome-icon icon="cog" size="lg" />
       <font-awesome-icon
-        v-if="settingsPanelVisible"
+        v-if="false && settingsPanelVisible"
         icon="chevron-right"
         fixed-width
       />
-      {{ $t('settings') }}
+      <!-- {{ $t('settings') }} -->
     </div>
   </div>
 </template>
@@ -82,6 +82,7 @@ export default {
       return 25000 + 5000 * Math.random();
     },
     fetchData() {
+      return;
       axios
         .get(backend_status_url)
         .then(({ data }) => {

@@ -2,7 +2,7 @@
   <div id="app" @click="dismiss">
     <span style="display:none">{{ revision }}</span>
     <div>
-      <header>
+      <header v-if="false">
         <p class="random-potato">{{ potatoFact }}</p>
       </header>
       <router-view />
@@ -16,6 +16,7 @@
       <p style="font-size:10px">version: {{ revision }}</p>
     </footer>
     <div
+      v-if="false"
       class="help"
       :class="helpClasses"
       @click="toggleTutorial"

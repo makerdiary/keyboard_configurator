@@ -2,10 +2,10 @@
   <div>
     <div ref="console">
       <controllerTop v-if="appInitialized" />
-      <statusPanel />
+      <statusPanel v-if="false" />
       <controllerBottom />
     </div>
-    <div class="hint hint-right">
+    <div v-if="false" class="hint hint-right">
       <a target="_blank" href="https://github.com/qmk/qmk_toolbox/releases">
         {{ $t('downloadToolbox.label') }}
       </a>

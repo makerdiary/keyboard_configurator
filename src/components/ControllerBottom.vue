@@ -31,6 +31,7 @@
         {{ $t('downloadKeymap.label') }}
       </button>
       <button
+        v-if="false"
         class="fixed-size"
         id="source"
         @click="downloadSource"
@@ -93,7 +94,7 @@
         v-bind:disabled="disableDownloadBinary"
       >
         <font-awesome-icon icon="download" size="lg" fixed-width />
-        {{ $t('downloadFirmware.label') }}
+        download
       </button>
     </div>
     <div v-if="downloadElementEnabled">

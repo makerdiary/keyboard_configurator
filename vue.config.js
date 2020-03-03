@@ -13,5 +13,8 @@ module.exports = {
       .use(path.resolve('scripts/i18n/loader.js'))
       .loader(path.resolve('scripts/i18n/loader.js'))
       .end();
+  },
+  devServer: {
+    disableHostCheck: true
   }
 };
