@@ -5,7 +5,11 @@ var webusb = {};
 
   webusb.get = function () {
     return navigator.usb.getDevices().then(devices => {
-      return devices.map(device => new webusb.Device(device));
+      if (devices.length == 1) {
+        return new webusb.Device(devices[0]);
+      } else {
+        webusb.request();
+      }
     });
   };
 
@@ -64,7 +68,7 @@ var webusb = {};
 
 
   webusb.connect = function () {
-    return webusb.request().then(device => {
+    return webusb.get().then(device => {
       webusb.device = device;
       device.onReceive = data => {
         let textDecoder = new TextDecoder();
