@@ -34,7 +34,7 @@
           <th>{{ i18n('date.title') }}</th>
           <td>{{ today }}</td>
         </tr>
-        <tr>
+        <tr v-if="false">
           <th>{{ i18n('source.title') }}</th>
           <td>
             <a :href="firmwareURL" target="_blank">{{ firmwareURL }}</a>
