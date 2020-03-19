@@ -1,125 +1,125 @@
 export default [
   { label: 'KeyboardSettings', group: true },
 
-  { label: 'Keyboard settings (persistent)', width: 'label' },
+  // { label: 'Keyboard settings (persistent)', width: 'label' },
 
-  {
-    name: 'Swap LCtl/Caps',
-    code: 'MAGIC_SWAP_CONTROL_CAPSLOCK',
-    title: 'Swap Left Control and Caps Lock',
-    width: 1500
-  },
-  {
-    name: 'Caps>LCtl',
-    code: 'MAGIC_CAPSLOCK_TO_CONTROL',
-    title: 'Treat Caps Lock as Left Control',
-    width: 1500
-  },
-  {
-    name: 'Swap LAlt/LGUI',
-    code: 'MAGIC_SWAP_LALT_LGUI',
-    title: 'Swap Left Alt and Left GUI',
-    width: 1500
-  },
-  {
-    name: 'Swap RAlt/RGUI',
-    code: 'MAGIC_SWAP_RALT_RGUI',
-    title: 'Swap Right Alt and Right GUI',
-    width: 1500
-  },
-  {
-    name: 'Disable GUI',
-    code: 'MAGIC_NO_GUI',
-    title: 'Disable the GUI keys (useful when gaming)',
-    width: 1500
-  },
-  {
-    name: 'Swap ` with Esc',
-    code: 'MAGIC_SWAP_GRAVE_ESC',
-    title: 'Swap ` and Escape',
-    width: 1500
-  },
-  {
-    name: 'Swap \\ with Bksp',
-    code: 'MAGIC_SWAP_BACKSLASH_BACKSPACE',
-    title: 'Swap Backslash and Backspace',
-    width: 1500
-  },
-  {
-    name: 'NKRO On',
-    code: 'MAGIC_HOST_NKRO',
-    title: 'Force N-Key Rollover (NKRO) on',
-    width: 1500
-  },
-  {
-    name: 'Swap Alt/GUI',
-    code: 'MAGIC_SWAP_ALT_GUI',
-    title: 'Swap Alt and GUI on both sides (for macOS)',
-    width: 1500
-  },
-  {
-    width: 0
-  },
-  {
-    name: 'Rev LCtl/Caps',
-    code: 'MAGIC_UNSWAP_CONTROL_CAPSLOCK',
-    title: 'Unswap Left Control and Caps Lock',
-    width: 1500
-  },
-  {
-    name: 'Rev Caps>LCtl',
-    code: 'MAGIC_UNCAPSLOCK_TO_CONTROL',
-    title: 'Stop treating Caps Lock as Left Control',
-    width: 1500
-  },
-  {
-    name: 'Rev LAlt/LGUI',
-    code: 'MAGIC_UNSWAP_LALT_LGUI',
-    title: 'Unswap Left Alt and Left GUI',
-    width: 1500
-  },
-  {
-    name: 'Rev RAlt/RGUI',
-    code: 'MAGIC_UNSWAP_RALT_RGUI',
-    title: 'Unswap Right Alt and Right GUI',
-    width: 1500
-  },
-  {
-    name: 'Enable GUI',
-    code: 'MAGIC_UNNO_GUI',
-    title: 'Enable the GUI keys',
-    width: 1500
-  },
-  {
-    name: 'Rev ` with Esc',
-    code: 'MAGIC_UNSWAP_GRAVE_ESC',
-    title: 'Unswap ` and Escape',
-    width: 1500
-  },
-  {
-    name: 'Rev \\ with Bksp',
-    code: 'MAGIC_UNSWAP_BACKSLASH_BACKSPACE',
-    title: 'Unswap Backslash and Backspace',
-    width: 1500
-  },
-  {
-    name: 'NKRO Off',
-    code: 'MAGIC_UNHOST_NKRO',
-    title: 'Force N-Key Rollover (NKRO) off',
-    width: 1500
-  },
-  {
-    name: 'Rev Alt/GUI',
-    code: 'MAGIC_UNSWAP_ALT_GUI',
-    title: 'Unswap Alt and GUI on both sides (for macOS)',
-    width: 1500
-  },
-  {
-    name: 'Togg NKRO',
-    code: 'MAGIC_TOGGLE_NKRO',
-    title: 'Turn NKRO on or off',
-    width: 1500
-  },
+  // {
+  //   name: 'Swap LCtl/Caps',
+  //   code: 'MAGIC_SWAP_CONTROL_CAPSLOCK',
+  //   title: 'Swap Left Control and Caps Lock',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Caps>LCtl',
+  //   code: 'MAGIC_CAPSLOCK_TO_CONTROL',
+  //   title: 'Treat Caps Lock as Left Control',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Swap LAlt/LGUI',
+  //   code: 'MAGIC_SWAP_LALT_LGUI',
+  //   title: 'Swap Left Alt and Left GUI',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Swap RAlt/RGUI',
+  //   code: 'MAGIC_SWAP_RALT_RGUI',
+  //   title: 'Swap Right Alt and Right GUI',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Disable GUI',
+  //   code: 'MAGIC_NO_GUI',
+  //   title: 'Disable the GUI keys (useful when gaming)',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Swap ` with Esc',
+  //   code: 'MAGIC_SWAP_GRAVE_ESC',
+  //   title: 'Swap ` and Escape',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Swap \\ with Bksp',
+  //   code: 'MAGIC_SWAP_BACKSLASH_BACKSPACE',
+  //   title: 'Swap Backslash and Backspace',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'NKRO On',
+  //   code: 'MAGIC_HOST_NKRO',
+  //   title: 'Force N-Key Rollover (NKRO) on',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Swap Alt/GUI',
+  //   code: 'MAGIC_SWAP_ALT_GUI',
+  //   title: 'Swap Alt and GUI on both sides (for macOS)',
+  //   width: 1500
+  // },
+  // {
+  //   width: 0
+  // },
+  // {
+  //   name: 'Rev LCtl/Caps',
+  //   code: 'MAGIC_UNSWAP_CONTROL_CAPSLOCK',
+  //   title: 'Unswap Left Control and Caps Lock',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Rev Caps>LCtl',
+  //   code: 'MAGIC_UNCAPSLOCK_TO_CONTROL',
+  //   title: 'Stop treating Caps Lock as Left Control',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Rev LAlt/LGUI',
+  //   code: 'MAGIC_UNSWAP_LALT_LGUI',
+  //   title: 'Unswap Left Alt and Left GUI',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Rev RAlt/RGUI',
+  //   code: 'MAGIC_UNSWAP_RALT_RGUI',
+  //   title: 'Unswap Right Alt and Right GUI',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Enable GUI',
+  //   code: 'MAGIC_UNNO_GUI',
+  //   title: 'Enable the GUI keys',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Rev ` with Esc',
+  //   code: 'MAGIC_UNSWAP_GRAVE_ESC',
+  //   title: 'Unswap ` and Escape',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Rev \\ with Bksp',
+  //   code: 'MAGIC_UNSWAP_BACKSLASH_BACKSPACE',
+  //   title: 'Unswap Backslash and Backspace',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'NKRO Off',
+  //   code: 'MAGIC_UNHOST_NKRO',
+  //   title: 'Force N-Key Rollover (NKRO) off',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Rev Alt/GUI',
+  //   code: 'MAGIC_UNSWAP_ALT_GUI',
+  //   title: 'Unswap Alt and GUI on both sides (for macOS)',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Togg NKRO',
+  //   code: 'MAGIC_TOGGLE_NKRO',
+  //   title: 'Turn NKRO on or off',
+  //   width: 1500
+  // },
 
   {
     label: 'Backlight settings',

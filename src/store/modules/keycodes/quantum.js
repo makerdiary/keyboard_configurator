@@ -10,46 +10,46 @@ function makeLT(layer) {
     title: `kc on tap, switch to layer ${layer} while held`
   };
 }
-// make a One-Shot Mod Keycode Definition
-const osmLookup = {
-  MOD_LSFT: ['LSft', 'Left Shift'],
-  MOD_LCTL: ['LCtl', 'Left Control'],
-  MOD_LALT: ['LAlt', 'Left Alt'],
-  MOD_LGUI: ['LGUI', 'Left GUI'],
-  MOD_RSFT: ['RSft', 'Right Shift'],
-  MOD_RCTL: ['RCtl', 'Right Control'],
-  MOD_RALT: ['RAlt', 'Right Alt'],
-  MOD_RGUI: ['RGUI', 'Right GUI'],
-  MOD_HYPR: ['Hyper', 'Control, Shift, Alt and GUI'],
-  MOD_MEH: ['Meh', 'Control, Shift, and Alt'],
-  'MOD_LCTL|MOD_LSFT': ['CS', 'Control and Shift'],
-  'MOD_LCTL|MOD_LALT': ['CA', 'Control and Alt'],
-  'MOD_LCTL|MOD_LGUI': ['CG', 'Control and GUI'],
-  'MOD_LSFT|MOD_LALT': ['SA', 'Shift and Alt'],
-  'MOD_LSFT|MOD_LGUI': ['SG', 'Shift and GUI'],
-  'MOD_LALT|MOD_LGUI': ['AG', 'Alt and GUI'],
-  'MOD_LCTL|MOD_LSFT|MOD_LGUI': ['CSG', 'Control, Shift, and GUI'],
-  'MOD_LCTL|MOD_LALT|MOD_LGUI': ['CAG', 'Control, Alt, and GUI'],
-  'MOD_LSFT|MOD_LALT|MOD_LGUI': ['SAG', 'Shift, Alt, and GUI']
-};
-function makeOSM(mod, width = 1000) {
-  const tuple = osmLookup[mod];
-  if (isUndefined(tuple)) {
-    throw new Error(`${mod} is not a valid One Shot Mod`);
-  }
-  const [name, title] = tuple;
-  return {
-    name: `OSM ${name}`,
-    code: `OSM(${mod})`,
-    title: `Enable ${title} for one keypress`,
-    width: width
-  };
-}
+// // make a One-Shot Mod Keycode Definition
+// const osmLookup = {
+//   MOD_LSFT: ['LSft', 'Left Shift'],
+//   MOD_LCTL: ['LCtl', 'Left Control'],
+//   MOD_LALT: ['LAlt', 'Left Alt'],
+//   MOD_LGUI: ['LGUI', 'Left GUI'],
+//   MOD_RSFT: ['RSft', 'Right Shift'],
+//   MOD_RCTL: ['RCtl', 'Right Control'],
+//   MOD_RALT: ['RAlt', 'Right Alt'],
+//   MOD_RGUI: ['RGUI', 'Right GUI'],
+//   MOD_HYPR: ['Hyper', 'Control, Shift, Alt and GUI'],
+//   MOD_MEH: ['Meh', 'Control, Shift, and Alt'],
+//   'MOD_LCTL|MOD_LSFT': ['CS', 'Control and Shift'],
+//   'MOD_LCTL|MOD_LALT': ['CA', 'Control and Alt'],
+//   'MOD_LCTL|MOD_LGUI': ['CG', 'Control and GUI'],
+//   'MOD_LSFT|MOD_LALT': ['SA', 'Shift and Alt'],
+//   'MOD_LSFT|MOD_LGUI': ['SG', 'Shift and GUI'],
+//   'MOD_LALT|MOD_LGUI': ['AG', 'Alt and GUI'],
+//   'MOD_LCTL|MOD_LSFT|MOD_LGUI': ['CSG', 'Control, Shift, and GUI'],
+//   'MOD_LCTL|MOD_LALT|MOD_LGUI': ['CAG', 'Control, Alt, and GUI'],
+//   'MOD_LSFT|MOD_LALT|MOD_LGUI': ['SAG', 'Shift, Alt, and GUI']
+// };
+// function makeOSM(mod, width = 1000) {
+//   const tuple = osmLookup[mod];
+//   if (isUndefined(tuple)) {
+//     throw new Error(`${mod} is not a valid One Shot Mod`);
+//   }
+//   const [name, title] = tuple;
+//   return {
+//     name: `OSM ${name}`,
+//     code: `OSM(${mod})`,
+//     title: `Enable ${title} for one keypress`,
+//     width: width
+//   };
+// }
 
 export default [
   { label: 'Quantum', width: 'label', group: true },
 
-  { label: 'QMK specific', width: 'label' },
+  { label: 'TMK specific', width: 'label' },
 
   { name: '', code: 'KC_NO', title: 'Do nothing' },
   {
@@ -57,20 +57,20 @@ export default [
     code: 'KC_TRNS',
     title: 'Use the next lowest non-transparent key'
   },
-  { name: 'Reset', code: 'RESET', title: 'Reset the keyboard' },
-  { name: 'Debug', code: 'DEBUG', title: 'Toggle debug mode' },
-  {
-    name: 'EEPROM Reset',
-    code: 'EEP_RST',
-    title: 'Resets EEPROM state',
-    width: 1500
-  },
+  // { name: 'Reset', code: 'RESET', title: 'Reset the keyboard' },
+  // { name: 'Debug', code: 'DEBUG', title: 'Toggle debug mode' },
+  // {
+  //   name: 'EEPROM Reset',
+  //   code: 'EEP_RST',
+  //   title: 'Resets EEPROM state',
+  //   width: 1500
+  // },
   { width: 1000 },
   {
     name: 'Any',
     code: 'text',
     type: 'text',
-    title: 'Manually enter any QMK keycode'
+    title: 'Manually enter any TMK keycode'
   },
 
   {
@@ -283,73 +283,73 @@ export default [
     title: 'LCTL + LALT'
   },
 
-  { width: 0 },
+  // { width: 0 },
 
-  makeOSM('MOD_LSFT'),
-  makeOSM('MOD_LCTL'),
-  makeOSM('MOD_LALT'),
-  makeOSM('MOD_LGUI'),
-  { width: 250 },
-  makeOSM('MOD_RSFT'),
-  makeOSM('MOD_RCTL'),
-  makeOSM('MOD_RALT'),
-  makeOSM('MOD_RGUI'),
-  { width: 250 },
-  makeOSM('MOD_LCTL|MOD_LSFT'),
-  makeOSM('MOD_LCTL|MOD_LALT'),
-  makeOSM('MOD_LCTL|MOD_LGUI'),
-  makeOSM('MOD_LSFT|MOD_LALT'),
-  makeOSM('MOD_LSFT|MOD_LGUI'),
-  makeOSM('MOD_LALT|MOD_LGUI'),
-  { width: 250 },
-  makeOSM('MOD_LCTL|MOD_LSFT|MOD_LGUI'),
-  makeOSM('MOD_LCTL|MOD_LALT|MOD_LGUI'),
-  makeOSM('MOD_LSFT|MOD_LALT|MOD_LGUI'),
-  { width: 250 },
-  makeOSM('MOD_MEH'),
-  makeOSM('MOD_HYPR'),
-  { width: 250 },
+  // makeOSM('MOD_LSFT'),
+  // makeOSM('MOD_LCTL'),
+  // makeOSM('MOD_LALT'),
+  // makeOSM('MOD_LGUI'),
+  // { width: 250 },
+  // makeOSM('MOD_RSFT'),
+  // makeOSM('MOD_RCTL'),
+  // makeOSM('MOD_RALT'),
+  // makeOSM('MOD_RGUI'),
+  // { width: 250 },
+  // makeOSM('MOD_LCTL|MOD_LSFT'),
+  // makeOSM('MOD_LCTL|MOD_LALT'),
+  // makeOSM('MOD_LCTL|MOD_LGUI'),
+  // makeOSM('MOD_LSFT|MOD_LALT'),
+  // makeOSM('MOD_LSFT|MOD_LGUI'),
+  // makeOSM('MOD_LALT|MOD_LGUI'),
+  // { width: 250 },
+  // makeOSM('MOD_LCTL|MOD_LSFT|MOD_LGUI'),
+  // makeOSM('MOD_LCTL|MOD_LALT|MOD_LGUI'),
+  // makeOSM('MOD_LSFT|MOD_LALT|MOD_LGUI'),
+  // { width: 250 },
+  // makeOSM('MOD_MEH'),
+  // makeOSM('MOD_HYPR'),
+  // { width: 250 },
 
-  { label: 'Special action keys', width: 'label' },
+  // { label: 'Special action keys', width: 'label' },
 
-  {
-    name: 'Esc/~',
-    code: 'KC_GESC',
-    title: 'Esc normally, but ~ when Shift or GUI is pressed'
-  },
-  {
-    name: 'LS/(',
-    code: 'KC_LSPO',
-    title: 'Left Shift when held, ( when tapped'
-  },
-  {
-    name: 'RS/)',
-    code: 'KC_RSPC',
-    title: 'Right Shift when held, ) when tapped'
-  },
-  {
-    name: 'LC/(',
-    code: 'KC_LCPO',
-    title: 'Left Control when held, ( when tapped'
-  },
-  {
-    name: 'RC/)',
-    code: 'KC_RCPC',
-    title: 'Right Control when held, ) when tapped'
-  },
-  {
-    name: 'LA/(',
-    code: 'KC_LAPO',
-    title: 'Left Alt when held, ( when tapped'
-  },
-  {
-    name: 'RA/)',
-    code: 'KC_RAPC',
-    title: 'Right Alt when held, ) when tapped'
-  },
-  {
-    name: 'RS / Enter',
-    code: 'KC_SFTENT',
-    title: 'Right Shift when held, Enter when tapped'
-  }
+  // {
+  //   name: 'Esc/~',
+  //   code: 'KC_GESC',
+  //   title: 'Esc normally, but ~ when Shift or GUI is pressed'
+  // },
+  // {
+  //   name: 'LS/(',
+  //   code: 'KC_LSPO',
+  //   title: 'Left Shift when held, ( when tapped'
+  // },
+  // {
+  //   name: 'RS/)',
+  //   code: 'KC_RSPC',
+  //   title: 'Right Shift when held, ) when tapped'
+  // },
+  // {
+  //   name: 'LC/(',
+  //   code: 'KC_LCPO',
+  //   title: 'Left Control when held, ( when tapped'
+  // },
+  // {
+  //   name: 'RC/)',
+  //   code: 'KC_RCPC',
+  //   title: 'Right Control when held, ) when tapped'
+  // },
+  // {
+  //   name: 'LA/(',
+  //   code: 'KC_LAPO',
+  //   title: 'Left Alt when held, ( when tapped'
+  // },
+  // {
+  //   name: 'RA/)',
+  //   code: 'KC_RAPC',
+  //   title: 'Right Alt when held, ) when tapped'
+  // },
+  // {
+  //   name: 'RS / Enter',
+  //   code: 'KC_SFTENT',
+  //   title: 'Right Shift when held, Enter when tapped'
+  // }
 ];
