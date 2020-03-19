@@ -11,8 +11,8 @@
     </div>
     <slideout-panel></slideout-panel>
     <footer>
-      <p>{{ $t('maintain') }}</p>
-      <p>{{ $t('hostedOn') }}</p>
+      <!-- <p>{{ $t('maintain') }}</p> -->
+      <!-- <p>{{ $t('hostedOn') }}</p> -->
       <p style="font-size:10px">version: {{ revision }}</p>
     </footer>
     <div

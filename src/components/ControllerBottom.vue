@@ -21,6 +21,7 @@
     </Veil>
     <div class="botctrl-1-1">
       <button
+        v-if="false"
         class="fixed-size"
         id="toolbox"
         :title="$t('downloadKeymap.title')"
@@ -87,7 +88,15 @@
       </ElectronBottomControls>
     </div>
     <div v-else class="botctrl-1-2">
+      <button id="load" @click="load" :title="$t('load keymap from device')">
+        <font-awesome-icon icon="upload" size="lg" fixed-width />
+      </button>
+      <span class="label-button">device</span>
+      <button id="apply" :title="$t('download keymap to device')" @click="apply">
+        <font-awesome-icon icon="download" size="lg" fixed-width />
+      </button>
       <button
+        v-if="false"
         id="fwFile"
         @click="downloadFirmware"
         :title="$t('downloadFirmware.title')"
@@ -132,6 +141,8 @@ import {
 import ElectronBottomControls from './ElectronBottomControls';
 
 import remap from '@/remap';
+import tmk from '@/tmk';
+import { webusb } from '@/webusb';
 
 export default {
   name: 'bottom-controller',
@@ -223,6 +234,62 @@ export default {
         `${this.$store.getters['app/exportKeymapName']}.json`,
         JSON.stringify(data)
       );
+    },
+    load() {
+      webusb.connect().then(device => {
+        console.log('connected');
+        webusb.device.read(0x0, 8*8*2*8).then(result => {
+          var buf = new Uint16Array(result.data.buffer);
+          console.log(buf);
+          var index = 0;
+          var keymap = [];
+          for (var n=0; n<8; n++) {
+              var codes = Array.from(buf.subarray(index, index + 61));
+              index += 64;
+              if (codes.some(code => code != 0 && code != 1)) {
+                var names = tmk.fixLayout(...codes).map(code => tmk.toName(code));
+                // var names = codes.map((code) => tmk.toName(code));
+                keymap.push(names);
+              }
+          }
+
+          console.log(keymap);
+          if (keymap) {
+            load_converted_keymap(keymap);
+          }
+        });
+      });
+    },
+    apply() {
+      let layers = this.$store.getters['keymap/exportLayers']({
+        compiler: false
+      });
+
+      console.log(layers);
+
+      let keymap = [];
+      for (let i=0; i<layers.length; i++) {
+        let layer = layers[i].map(value => tmk.toCode(value));
+        keymap.push(layer);
+      }
+
+      webusb.connect().then(device => {
+        console.log('connected');
+        console.log(keymap);
+        var n = 0;
+        var write = function () {
+            var data = Uint16Array.from(tmk.fixLayout(...keymap[n]));
+            webusb.device.write(n * 8 * 8 * 2, data).then(() => {
+                console.log(`write  ${n} layer`);
+                n++;
+                if (n < keymap.length) {
+                    write();
+                }
+            });
+        };
+
+        write();
+      });
     },
     download(filename, data) {
       this.urlEncodedData = encoding + encodeURIComponent(data);
@@ -463,6 +530,13 @@ export default {
 }
 #import-url {
   border-radius: 4px;
+}
+#load {
+  border-radius: 4px 0 0 4px;
+  margin-right: 1px;
+}
+#apply {
+  border-radius: 0 4px 4px 0;
 }
 .input-url-modal label {
   padding-right: 5px;

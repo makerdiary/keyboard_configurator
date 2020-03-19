@@ -39,7 +39,7 @@
           @change="toggleDisplaySizes"
         />
       </div>
-      <div>
+      <div v-if="false">
         <label
           class="settings-panel--text"
           @mouseover="help('toggleTutorial')"

@@ -3,7 +3,7 @@
     <div class="qmk-branding">
       <div class="qmk-logo"></div>
       <div class="qmk-app-name">
-        QMK Configurator
+        Keyboard Configurator
       </div>
       <div v-if="false" class="bes-version">
         {{ $t('apiVersionPrefix') }}
@@ -11,6 +11,7 @@
       </div>
     </div>
     <div class="bes-title">
+      <div v-if="false">
       <div class="bes-status">
         <div class="bes-status-left" :class="currentStatusClass">
           <ul>
@@ -21,6 +22,7 @@
           {{ $t('serverIs') }}
         </div>
         <div class="bes-status-right">{{ jobs }}</div>
+      </div>
       </div>
     </div>
     <div class="bes-discord">

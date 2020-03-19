@@ -1,5 +1,5 @@
 <template>
-  <div id="controller-top">
+  <div v-if="false" id="controller-top">
     <div class="topctrl">
       <div class="topctrl-keyboards">
         <a
@@ -25,7 +25,7 @@
           ref="select"
         ></v-select>
       </div>
-      <div class="topctrl-layouts">
+      <div v-if="false" class="topctrl-layouts">
         <label class="drop-label" id="drop-label-version"
           >{{ $t('layout.label') }}:</label
         >
@@ -38,7 +38,7 @@
           >
         </select>
       </div>
-      <div class="topctrl-keymap-name">
+      <div v-if="false" class="topctrl-keymap-name">
         <label
           class="drop-label"
           :class="fontAdjustClasses"
@@ -373,8 +373,8 @@ export default {
       compileLayout(this.keyboard, keymapName, this.layout);
     },
     connect() {
-      webusb.connect().then(() => {
-        webusb.send("hello");
+      webusb.connect().then((device) => {
+        device.send("hello");
       })
     },
     updateFilter(filter) {
@@ -423,7 +423,7 @@ export default {
 .topctrl {
   text-align: left;
   display: grid;
-  grid-template: [top] 1fr [middle] 1fr [bottom] 1fr / [left] minmax(700px, 3fr) [right] 2fr;
+  grid-template: [top] 1fr / [left] minmax(700px, 3fr) [right] 2fr;
   grid-row-gap: 2px;
 }
 #controller-top {

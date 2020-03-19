@@ -4,7 +4,7 @@
 -->
 <template>
   <div id="keycodes-section">
-    <div style="text-align: left; margin-left: 10px;">
+    <div v-if="false" style="text-align: left; margin-left: 10px;">
       <p>
         <label>{{ $t('keycodes.label') }}:</label>
         <span class="hint">
