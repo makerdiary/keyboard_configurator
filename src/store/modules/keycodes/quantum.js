@@ -96,13 +96,13 @@ export default [
     layer: 0,
     title: 'Toggle layer on/off'
   },
-  {
-    name: 'TO',
-    code: 'TO(layer)',
-    type: 'layer',
-    layer: 0,
-    title: 'Turn on layer when pressed'
-  },
+  // {
+  //   name: 'TO',
+  //   code: 'TO(layer)',
+  //   type: 'layer',
+  //   layer: 0,
+  //   title: 'Turn on layer when pressed'
+  // },
   {
     name: 'TT',
     code: 'TT(layer)',
@@ -111,20 +111,20 @@ export default [
     title:
       "Normally acts like MO unless it's tapped multple times which toggles layer on"
   },
-  {
-    name: 'DF',
-    code: 'DF(layer)',
-    type: 'layer',
-    layer: 0,
-    title: 'Sets the default layer'
-  },
-  {
-    name: 'OSL',
-    code: 'OSL(layer)',
-    type: 'layer',
-    layer: 0,
-    title: 'Switch to layer for one keypress'
-  },
+  // {
+  //   name: 'DF',
+  //   code: 'DF(layer)',
+  //   type: 'layer',
+  //   layer: 0,
+  //   title: 'Sets the default layer'
+  // },
+  // {
+  //   name: 'OSL',
+  //   code: 'OSL(layer)',
+  //   type: 'layer',
+  //   layer: 0,
+  //   title: 'Switch to layer for one keypress'
+  // },
 
   { width: 500 },
 
@@ -214,6 +214,18 @@ export default [
     code: 'C_S_T(kc)',
     type: 'container',
     title: 'Left Control + Left Shift when held, kc when tapped'
+  },
+  {
+    name: 'C_G_T',
+    code: 'C_G_T(kc)',
+    type: 'container',
+    title: 'Left Control + Left GUI when held, kc when tapped'
+  },
+  {
+    name: 'A_G_T',
+    code: 'A_G_T(kc)',
+    type: 'container',
+    title: 'Left Alt + Left GUI when held, kc when tapped'
   },
   {
     name: 'All_T',

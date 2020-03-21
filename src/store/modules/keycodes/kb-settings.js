@@ -122,7 +122,75 @@ export default [
   // },
 
   {
-    label: 'Backlight settings',
+    label: 'Bluetooth & USB Settings',
+    width: 'label'
+  },
+
+  {
+    name: 'BT 1',
+    code: 'KC_BT1',
+    title: 'Switch to BT ID 1'
+  },
+  {
+    name: 'BT 2',
+    code: 'KC_BT2',
+    title: 'Switch to BT ID 2'
+  },
+  {
+    name: 'BT 3',
+    code: 'KC_BT3',
+    title: 'Switch to BT ID 3'
+  },
+  {
+    name: 'BT 4',
+    code: 'KC_BT4',
+    title: 'Switch to BT ID 4'
+  },
+  {
+    name: 'BT 5',
+    code: 'KC_BT5',
+    title: 'Switch to BT ID 5'
+  },
+  {
+    name: 'BT 6',
+    code: 'KC_BT6',
+    title: 'Switch to BT ID 6'
+  },
+  {
+    name: 'BT 7',
+    code: 'KC_BT7',
+    title: 'Switch to BT ID 7'
+  },
+  {
+    name: 'BT 8',
+    code: 'KC_BT8',
+    title: 'Switch to BT ID 8'
+  },
+  {
+    name: 'BT 9',
+    code: 'KC_BT9',
+    title: 'Switch to BT ID 9'
+  },
+  {
+    name: 'BT 0',
+    code: 'KC_BT0',
+    title: 'Switch to BT 0 which supports multiple connections'
+  },
+  { width: 250 },
+  {
+    name: 'BT Toggle',
+    code: 'KC_BT_T',
+    title: 'Toggle BT'
+  },
+  { width: 500 },
+  {
+    name: 'USB',
+    code: 'KC_USB',
+    title: 'Toggle USB HID'
+  },
+
+  {
+    label: 'Backlight Settings',
     width: 'label'
   },
 
@@ -136,16 +204,16 @@ export default [
     code: 'BL_STEP',
     title: 'Cycle through backlight levels'
   },
-  {
-    name: 'BL On',
-    code: 'BL_ON',
-    title: 'Set the backlight to max brightness'
-  },
-  {
-    name: 'BL Off',
-    code: 'BL_OFF',
-    title: 'Turn the backlight off'
-  },
+  // {
+  //   name: 'BL On',
+  //   code: 'BL_ON',
+  //   title: 'Set the backlight to max brightness'
+  // },
+  // {
+  //   name: 'BL Off',
+  //   code: 'BL_OFF',
+  //   title: 'Turn the backlight off'
+  // },
   {
     name: 'BL +',
     code: 'BL_INC',
@@ -156,13 +224,13 @@ export default [
     code: 'BL_DEC',
     title: 'Decrease the backlight level'
   },
-  {
-    name: 'BL Breath',
-    code: 'BL_BRTG',
-    title: 'Toggle backlight breathing'
-  },
+  // {
+  //   name: 'BL Breath',
+  //   code: 'BL_BRTG',
+  //   title: 'Toggle backlight breathing'
+  // },
 
-  { label: 'RGB Lighting settings', width: 'label' },
+  { label: 'RGB Lighting Settings', width: 'label' },
 
   {
     name: 'RGB Toggle',
@@ -186,5 +254,17 @@ export default [
   { name: 'RGB Mode SN', code: 'RGB_M_SN', title: 'RGB Mode: Snake' },
   { name: 'RGB Mode K', code: 'RGB_M_K', title: 'RGB Mode: Knight Rider' },
   { name: 'RGB Mode X', code: 'RGB_M_X', title: 'RGB Mode: Christmas' },
-  { name: 'RGB Mode G', code: 'RGB_M_G', title: 'RGB Mode: Gradient' }
+  { name: 'RGB Mode G', code: 'RGB_M_G', title: 'RGB Mode: Gradient' },
+
+
+  {
+    label: 'Other Settings',
+    width: 'label'
+  },
+
+  {
+    name: 'Boot loader',
+    code: 'KC_BTLD',
+    title: 'Run into bootloader'
+  }
 ];

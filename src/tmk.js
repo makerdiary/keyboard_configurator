@@ -223,29 +223,29 @@ const code2name = {
   0x4081: 'KC_PWR',
   0x4082: 'KC_SLEP',
   0x4083: 'KC_WAKE',
-  0x40b2: 'KC_MEDIA_RECORD',
-  0x40b3: 'KC_MFFD',
-  0x40b4: 'KC_MRWD',
-  0x40b5: 'KC_MNXT',
-  0x40b6: 'KC_MPRV',
-  0x40b7: 'KC_MSTP',
-  0x40b8: 'KC_EJCT',
-  0x40cc: 'KC_MEDIA_STOP_EJECT',
-  0x40cd: 'KC_MPLY',
-  0x40e2: 'KC_MUTE',
-  0x40e9: 'KC_VOLU',
-  0x40ea: 'KC_VOLD',
-  0x4183: 'KC_MSEL',
-  0x418a: 'KC_MAIL',
-  0x4192: 'KC_CALC',
-  0x4194: 'KC_MYCM',
-  0x4221: 'KC_WSCH',
-  0x4223: 'KC_WHOM',
-  0x4224: 'KC_WBAK',
-  0x4225: 'KC_WFWD',
-  0x4226: 'KC_WSTP',
-  0x4227: 'KC_WREF',
-  0x422a: 'KC_WFAV',
+  0x44b2: 'KC_MEDIA_RECORD',
+  0x44b3: 'KC_MFFD',
+  0x44b4: 'KC_MRWD',
+  0x44b5: 'KC_MNXT',
+  0x44b6: 'KC_MPRV',
+  0x44b7: 'KC_MSTP',
+  0x44b8: 'KC_EJCT',
+  0x44cc: 'KC_MEDIA_STOP_EJECT',
+  0x44cd: 'KC_MPLY',
+  0x44e2: 'KC_MUTE',
+  0x44e9: 'KC_VOLU',
+  0x44ea: 'KC_VOLD',
+  0x4583: 'KC_MSEL',
+  0x458a: 'KC_MAIL',
+  0x4592: 'KC_CALC',
+  0x4594: 'KC_MYCM',
+  0x4421: 'KC_WSCH',
+  0x4423: 'KC_WHOM',
+  0x4424: 'KC_WBAK',
+  0x4425: 'KC_WFWD',
+  0x4426: 'KC_WSTP',
+  0x4427: 'KC_WREF',
+  0x442a: 'KC_WFAV',
 
   0x50f0: 'KC_MS_U',
   0x50f1: 'KC_MS_D',
@@ -264,7 +264,27 @@ const code2name = {
   0x50fe: 'KC_ACL1',
   0x50ff: 'KC_ACL2',
 
-  0xe000: 'KC_BTLD'
+  0xd000: 'BL_INC',
+  0xd100: 'BL_DEC',
+  0xd200: 'BL_TOGG',
+  0xd300: 'BL_STEP',
+
+  0xe000: 'KC_BTLD',
+
+  0xfe20: 'RGB_MOD',
+
+  0xff00: 'KC_BT0',
+  0xff01: 'KC_BT1',
+  0xff02: 'KC_BT2',
+  0xff03: 'KC_BT3',
+  0xff04: 'KC_BT4',
+  0xff05: 'KC_BT5',
+  0xff06: 'KC_BT6',
+  0xff07: 'KC_BT7',
+  0xff08: 'KC_BT8',
+  0xff09: 'KC_BT9',
+  0xff0f: 'KC_BT_T',
+  0xffff: 'KC_USB'
 };
 
 const name2code = {
@@ -361,7 +381,6 @@ const name2code = {
   KC_SLCK: 0x47,
   KC_PAUSE: 0x48,
   KC_PAUS: 0x48,
-  KC_BRK: 0x48,
   KC_INSERT: 0x49,
   KC_INS: 0x49,
   KC_HOME: 0x4a,
@@ -633,53 +652,53 @@ const name2code = {
   KC_SYSTEM_WAKE: 0x4083,
   KC_WAKE: 0x4083,
 
-  KC_AUDIO_MUTE: 0x40e2,
-  KC_MUTE: 0x40e2,
-  KC_AUDIO_VOL_UP: 0x40e9,
-  KC_VOLU: 0x40e9,
-  KC_AUDIO_VOL_DOWN: 0x40ea,
-  KC_VOLD: 0x40ea,
+  KC_AUDIO_MUTE: 0x44e2,
+  KC_MUTE: 0x44e2,
+  KC_AUDIO_VOL_UP: 0x44e9,
+  KC_VOLU: 0x44e9,
+  KC_AUDIO_VOL_DOWN: 0x44ea,
+  KC_VOLD: 0x44ea,
 
-  KC_MEDIA_NEXT_TRACK: 0x40b5,
-  KC_MNXT: 0x40b5,
-  KC_MEDIA_PREV_TRACK: 0x40b6,
-  KC_MPRV: 0x40b6,
-  KC_MEDIA_STOP: 0x40b7,
-  KC_MSTP: 0x40b7,
-  KC_MEDIA_STOP_EJECT: 0x40cc,
-  KC_MEDIA_PLAY_PAUSE: 0x40cd,
-  KC_MPLY: 0x40cd,
+  KC_MEDIA_NEXT_TRACK: 0x44b5,
+  KC_MNXT: 0x44b5,
+  KC_MEDIA_PREV_TRACK: 0x44b6,
+  KC_MPRV: 0x44b6,
+  KC_MEDIA_STOP: 0x44b7,
+  KC_MSTP: 0x44b7,
+  KC_MEDIA_STOP_EJECT: 0x44cc,
+  KC_MEDIA_PLAY_PAUSE: 0x44cd,
+  KC_MPLY: 0x44cd,
 
-  KC_MEDIA_RECORD: 0x40b2,
-  KC_MEDIA_FAST_FORWARD: 0x40b3,
-  KC_MFFD: 0x40b3,
-  KC_MEDIA_REWIND: 0x40b4,
-  KC_MRWD: 0x40b4,
-  KC_MEDIA_EJECT: 0x40b8,
-  KC_EJCT: 0x40b8,
-  KC_MEDIA_SELECT: 0x4183,
-  KC_MSEL: 0x4183,
+  KC_MEDIA_RECORD: 0x44b2,
+  KC_MEDIA_FAST_FORWARD: 0x44b3,
+  KC_MFFD: 0x44b3,
+  KC_MEDIA_REWIND: 0x44b4,
+  KC_MRWD: 0x44b4,
+  KC_MEDIA_EJECT: 0x44b8,
+  KC_EJCT: 0x44b8,
+  KC_MEDIA_SELECT: 0x4583,
+  KC_MSEL: 0x4583,
 
-  KC_MAIL: 0x418a,
-  KC_CALCULATOR: 0x4192,
-  KC_CALC: 0x4192,
-  KC_MY_COMPUTER: 0x4194,
-  KC_MYCM: 0x4194,
+  KC_MAIL: 0x458a,
+  KC_CALCULATOR: 0x4592,
+  KC_CALC: 0x4592,
+  KC_MY_COMPUTER: 0x4594,
+  KC_MYCM: 0x4594,
 
-  KC_WWW_SEARCH: 0x4221,
-  KC_WSCH: 0x4221,
-  KC_WWW_HOME: 0x4223,
-  KC_WHOM: 0x4223,
-  KC_WWW_BACK: 0x4224,
-  KC_WBAK: 0x4224,
-  KC_WWW_FORWARD: 0x4225,
-  KC_WFWD: 0x4225,
-  KC_WWW_STOP: 0x4226,
-  KC_WSTP: 0x4226,
-  KC_WWW_REFRESH: 0x4227,
-  KC_WREF: 0x4227,
-  KC_WWW_BOOKMARKS: 0x422a,
-  KC_WFAV: 0x422a,
+  KC_WWW_SEARCH: 0x4421,
+  KC_WSCH: 0x4421,
+  KC_WWW_HOME: 0x4423,
+  KC_WHOM: 0x4423,
+  KC_WWW_BACK: 0x4424,
+  KC_WBAK: 0x4424,
+  KC_WWW_FORWARD: 0x4425,
+  KC_WFWD: 0x4425,
+  KC_WWW_STOP: 0x4426,
+  KC_WSTP: 0x4426,
+  KC_WWW_REFRESH: 0x4427,
+  KC_WREF: 0x4427,
+  KC_WWW_BOOKMARKS: 0x442a,
+  KC_WFAV: 0x442a,
 
   KC_MS_UP: 0x50f0,
   KC_MS_DOWN: 0x50f1,
@@ -715,8 +734,28 @@ const name2code = {
   KC_ACL1: 0x50fe,
   KC_ACL2: 0x50ff,
 
+  BL_INC: 0xd000,
+  BL_DEC: 0xd100,
+  BL_TOGG: 0xd200,
+  BL_STEP: 0xd300,
+
   KC_BOOTLOADER: 0xe000,
-  KC_BTLD: 0xe000
+  KC_BTLD: 0xe000,
+
+  RGB_MOD: 0xfe20,
+
+  KC_BT0: 0xff00,
+  KC_BT1: 0xff01,
+  KC_BT2: 0xff02,
+  KC_BT3: 0xff03,
+  KC_BT4: 0xff04,
+  KC_BT5: 0xff05,
+  KC_BT6: 0xff06,
+  KC_BT7: 0xff07,
+  KC_BT8: 0xff08,
+  KC_BT9: 0xff09,
+  KC_BT_T: 0xff0f,
+  KC_USB: 0xffff,
 };
 
 // Special code2name for Layer Tap
@@ -730,7 +769,7 @@ function LayerTap(code) {
   let layer = (code >> 8) & 0x1f;
   switch (op) {
     case OP_TAP_TOGGLE:
-      return `TG(${layer})`;
+      return `TT(${layer})`;
     case OP_ON_OFF:
       return `MO(${layer})`;
     case OP_OFF_ON:
@@ -746,6 +785,41 @@ function LayerTap(code) {
   }
 }
 
+const mods2name = {
+  0x01: 'LCTL',
+  0x02: 'LSFT',
+  0x04: 'LALT',
+  0x08: 'LGUI',
+  0x11: 'RCTL',
+  0x12: 'RSFT',
+  0x14: 'RALT',
+  0x18: 'RGUI',
+  0x05: 'LCA',
+  0x07: 'MEH',
+  0x0a: 'SGUI',
+  0x0d: 'LCAG',
+  0x1d: 'RCAG',
+  0x0f: 'HYPR',
+
+  0x21: 'LCTL_T',
+  0x22: 'LSFT_T',
+  0x24: 'LALT_T',
+  0x28: 'LGUI_T',
+  0x31: 'RCTL_T',
+  0x32: 'RSFT_T',
+  0x34: 'RALT_T',
+  0x38: 'RGUI_T',
+  0x23: 'C_S_T',
+  0x29: 'C_G_T',
+  0x2c: 'A_G_T',
+  0x25: 'LCA_T',
+  0x27: 'MEH_T',
+  0x2a: 'SGUI_T',
+  0x2d: 'LCAG_T',
+  0x3d: 'RCAG_T',
+  0x2f: 'ALL_T',
+};
+
 function toName(code) {
   if (code in code2name) {
     return code2name[code];
@@ -757,9 +831,21 @@ function toName(code) {
     case 0x1:
     case 0x2: // LMODS_TAP, MODS_TAP
     case 0x3: // RMODS_TAP
+      let mods = code >> 8;
+      let key = code & 0xff;
+      console.log(mods, key);
+      if (mods in mods2name && key in code2name) {
+        return `${mods2name[mods]}(${code2name[key]})`;
+      } else {
+        return `ANY(${code})`;
+      }
     case 0x4: // USAGE
     case 0x5: // MOUSEKEY
     case 0x8: // LAYER
+      if ((code & 0xff00) == 0x8a00) {
+        let layer = ((code & 0xe0) >> 5) * 4 + Math.floor(Math.log2(code & 0x1f));
+        return `TG(${layer})`;
+      }
       return `ANY(${code})`;
     case 0xa: // LAYER_TAP
     case 0xb: // LAYER_TAP_EXT
@@ -781,7 +867,7 @@ const modsActions = [
   { mask: 0x0500, name: 'LCA', exp: /LCA\((.*)\)/, title: 'LCTL + LALT' },
   { mask: 0x0a00, name: 'SGUI', exp: /SGUI\((.*)\)/, title: 'LSFT + LGUI' },
   {
-    mask: 0x0800,
+    mask: 0x0700,
     name: 'MEH',
     exp: /MEH\((.*)\)/,
     title: 'LCTL + LSFT + LALT'
@@ -813,6 +899,8 @@ const modsActions = [
   { mask: 0x3400, name: 'RALT_T', exp: /RALT_T\((.*)\)/, title: 'RALT_T' },
   { mask: 0x3800, name: 'RGUI_T', exp: /RGUI_T\((.*)\)/, title: 'RGUI_T' },
   { mask: 0x2300, name: 'C_S_T', exp: /C_S_T\((.*)\)/, title: 'LCTL + LSFT' },
+  { mask: 0x2900, name: 'C_G_T', exp: /C_G_T\((.*)\)/, title: 'LCTL + LGUI' },
+  { mask: 0x2c00, name: 'A_G_T', exp: /A_G_T\((.*)\)/, title: 'LALT + LGUI' },
   { mask: 0x2500, name: 'LCA_T', exp: /LCA_T\((.*)\)/, title: 'LCTL + LALT' },
   { mask: 0x2a00, name: 'SGUI_T', exp: /SGUI_T\((.*)\)/, title: 'LSFT + LGUI' },
   {
@@ -851,16 +939,6 @@ function toCode(name) {
     return name2code[name];
   }
 
-  for (let i = 0; i < modsActions.length; i++) {
-    let action = modsActions[i];
-    let result = name.match(action.exp);
-    if (result) {
-      console.log(result, name, action);
-      let key = result[1].trim();
-      return action.mask | name2code[key];
-    }
-  }
-
   for (let i = 0; i < layerActions.length; i++) {
     let action = layerActions[i];
     let result = name.match(action.exp);
@@ -877,10 +955,26 @@ function toCode(name) {
     return 0xa000 | (layer << 8) | name2code[key];
   }
 
+  result = name.match(/TG\((.*)\)/);
+  if (result) {
+    let layer = parseInt(result[1]);
+    return 0x8a00 | (Math.floor(layer / 4) << 5) | (1 << (layer % 4));
+  }
+
   result = name.match(/ANY\((.*)\)/);
   if (result) {
     let code = parseInt(result[1]);
     return code;
+  }
+
+  for (let i = 0; i < modsActions.length; i++) {
+    let action = modsActions[i];
+    let result = name.match(action.exp);
+    if (result) {
+      console.log(result, name, action);
+      let key = result[1].trim();
+      return action.mask | name2code[key];
+    }
   }
 
   return 0;
