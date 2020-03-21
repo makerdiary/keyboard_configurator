@@ -161,6 +161,7 @@ export default {
 }
 #colorway-select {
   font-family: 'Roboto', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  border-radius: 4px;
 }
 .beta-feedback {
   position: fixed;
