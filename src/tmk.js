@@ -758,33 +758,6 @@ const name2code = {
   KC_USB: 0xffff,
 };
 
-// Special code2name for Layer Tap
-const OP_TAP_TOGGLE = 0xf0;
-const OP_ON_OFF = 0xf1;
-const OP_OFF_ON = 0xf2;
-const OP_SET_CLEAR = 0xf3;
-
-function LayerTap(code) {
-  let op = code & 0xff;
-  let layer = (code >> 8) & 0x1f;
-  switch (op) {
-    case OP_TAP_TOGGLE:
-      return `TT(${layer})`;
-    case OP_ON_OFF:
-      return `MO(${layer})`;
-    case OP_OFF_ON:
-    case OP_SET_CLEAR:
-      return `ANY(${code})`;
-    default:
-      // ACTION_LAYER_MODS
-      if ((code & 0xe0) == 0xc0) {
-        return `ANY(${code})`;
-      } else {
-        return `LT(${layer},${code2name[code & 0xff]})`;
-      }
-  }
-}
-
 const mods2name = {
   0x01: 'LCTL',
   0x02: 'LSFT',
@@ -819,6 +792,37 @@ const mods2name = {
   0x3d: 'RCAG_T',
   0x2f: 'ALL_T',
 };
+
+// Special code2name for Layer Tap
+const OP_TAP_TOGGLE = 0xf0;
+const OP_ON_OFF = 0xf1;
+const OP_OFF_ON = 0xf2;
+const OP_SET_CLEAR = 0xf3;
+
+function LayerTap(code) {
+  let op = code & 0xff;
+  let layer = (code >> 8) & 0x1f;
+  switch (op) {
+    case OP_TAP_TOGGLE:
+      return `TT(${layer})`;
+    case OP_ON_OFF:
+      return `MO(${layer})`;
+    case OP_OFF_ON:
+    case OP_SET_CLEAR:
+      return `ANY(${code})`;
+    default:
+      // ACTION_LAYER_MODS
+      if ((code & 0xe0) == 0xc0) {
+        let mods = code & 0x1f;
+        if (mods in mods2name) {
+          return `LM(${layer},KC_${mods2name[mods]})`;
+        }
+        return `ANY(${code})`;
+      } else {
+        return `LT(${layer},${code2name[code & 0xff]})`;
+      }
+  }
+}
 
 function toName(code) {
   if (code in code2name) {
@@ -930,8 +934,7 @@ const modsActions = [
 ];
 
 const layerActions = [
-  { mask: 0xa0f1, name: 'LAYER_MOMENTARY', exp: /MO\((.*)\)/ },
-  { mask: 0xa0f0, name: 'LAYER_TOGGLE', exp: /TG\((.*)\)/ }
+  { mask: 0xa0f1, name: 'LAYER_MOMENTARY', exp: /MO\((.*)\)/ }
 ];
 
 function toCode(name) {
@@ -961,6 +964,18 @@ function toCode(name) {
     return 0x8a00 | (Math.floor(layer / 4) << 5) | (1 << (layer % 4));
   }
 
+  result = name.match(/LM\((.*),(.*)\)/);
+  if (result) {
+    let layer = parseInt(result[1]);
+    let key = result[2].trim();
+    let keycode = name2code[key];
+    if (keycode && (keycode & 0xe0) == 0xe0) {
+      let mods = ((keycode & 4) << 2) | (1 << (keycode & 3));
+      return 0xa000 | (layer << 8) | 0xc0 | mods;
+    }
+    return 0;
+  }
+
   result = name.match(/ANY\((.*)\)/);
   if (result) {
     let code = parseInt(result[1]);
@@ -977,6 +992,7 @@ function toCode(name) {
     }
   }
 
+  console.log(`${name} not recognized`)
   return 0;
 }
 

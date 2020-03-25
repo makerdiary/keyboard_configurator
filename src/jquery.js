@@ -377,6 +377,11 @@ function parseKeycode(keycode, stats) {
       if (maincode === 'LT') {
         return newLayerContainerKey(maincode, internal);
       }
+
+      if (maincode === 'LM') {
+        return newLayerContainerKey(maincode, internal);
+      }
+
       // combo keycode
       metadata = store.getters['keycodes/lookupKeycode'](internal);
       if (metadata === undefined) {

@@ -10,6 +10,17 @@ function makeLT(layer) {
     title: `kc on tap, switch to layer ${layer} while held`
   };
 }
+
+// make a Momentary Layer Key with Modifiers
+function makeLM(layer) {
+  return {
+    name: `LM ${layer}`,
+    code: `LM(${layer},kc)`,
+    type: 'layer-container',
+    layer: layer,
+    title: `Momentary switch to layer ${layer} with Modifiers`
+  };
+}
 // // make a One-Shot Mod Keycode Definition
 // const osmLookup = {
 //   MOD_LSFT: ['LSft', 'Left Shift'],
@@ -127,7 +138,6 @@ export default [
   // },
 
   { width: 500 },
-
   makeLT(0),
   makeLT(1),
   makeLT(2),
@@ -145,6 +155,24 @@ export default [
   makeLT(13),
   makeLT(14),
   makeLT(15),
+  { width: 0 },
+  makeLM(0),
+  makeLM(1),
+  makeLM(2),
+  makeLM(3),
+  makeLM(4),
+  makeLM(5),
+  makeLM(6),
+  makeLM(7),
+  { width: 250 },
+  makeLM(8),
+  makeLM(9),
+  makeLM(10),
+  makeLM(11),
+  makeLM(12),
+  makeLM(13),
+  makeLM(14),
+  makeLM(15),
 
   {
     label:
