@@ -56,7 +56,7 @@ webusb.Device.prototype.connect = function() {
     });
 };
 
-webusb.Device.prototype.disconnect = function() {
+webusb.Device.prototype.close = function() {
   return this.device.close();
 };
 
@@ -79,8 +79,8 @@ webusb.Device.prototype.write = function(address, data) {
       requestType: 'vendor',
       recipient: 'device',
       request: 0x04,
-      value: 0x00,
-      index: address
+      value: address,
+      index: 0x00
     },
     data
   );

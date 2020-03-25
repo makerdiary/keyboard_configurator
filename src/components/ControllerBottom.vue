@@ -238,7 +238,9 @@ export default {
     load() {
       webusb.connect().then(device => {
         console.log('connected');
-        webusb.device.read(0x0, 8*8*2*8).then(result => {
+        device.read(0x0, 8*8*2*8).then(result => {
+          device.close();
+
           var buf = new Uint16Array(result.data.buffer);
           console.log(buf);
           var index = 0;
@@ -247,8 +249,11 @@ export default {
               var codes = Array.from(buf.subarray(index, index + 61));
               index += 64;
               if (codes.some(code => code != 0 && code != 1)) {
-                var names = tmk.fixLayout(...codes).map(code => tmk.toName(code));
+                var data = tmk.fixLayout(...codes);
+                var names = data.map(code => tmk.toName(code));
                 // var names = codes.map((code) => tmk.toName(code));
+                console.log(data);
+                console.log(names);
                 keymap.push(names);
               }
           }
@@ -273,23 +278,26 @@ export default {
         keymap.push(layer);
       }
 
-      webusb.connect().then(device => {
-        console.log('connected');
-        console.log(keymap);
-        var n = 0;
-        var write = function () {
-            var data = Uint16Array.from(tmk.fixLayout(...keymap[n]));
-            webusb.device.write(n * 8 * 8 * 2, data).then(() => {
-                console.log(`write  ${n} layer`);
-                n++;
-                if (n < keymap.length) {
-                    write();
-                }
-            });
-        };
+      console.log(keymap);
+      var n = 0;
+      var write = function () {
+        webusb.connect().then(device => {
+          console.log('connected');
+          var data = Uint16Array.from(tmk.fixLayout(...keymap[n]));
+          console.log(data)
+          device.write(n * 8 * 8 * 2, data).then(() => {
+            console.log(`write  ${n} layer`);
+            n++;
+            if (n < keymap.length) {
+              write();
+            } else {
+              device.close();
+            }
+          });
+        });
+      };
 
-        write();
-      });
+      write();
     },
     download(filename, data) {
       this.urlEncodedData = encoding + encodeURIComponent(data);
