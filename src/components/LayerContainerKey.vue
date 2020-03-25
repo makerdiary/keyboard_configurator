@@ -14,7 +14,7 @@
     @dragover.prevent="dragover"
     @dragenter="dragenter"
     @dragleave="dragleave"
-  ><div>LT {{ meta.layer }}<div
+  ><div>{{ meta.name.slice(0, 2) + ' ' + meta.layer }}<div
   class="key-contents"
   :class="contentClasses"
   @dragenter.prevent="dragenterContents"
@@ -41,7 +41,7 @@ export default {
     mytitle() {
       const contents =
         (this.meta.contents && this.meta.contents.code) || 'KC_NO';
-      return `LT(${this.meta.layer}, ${contents})`;
+      return `${this.meta.name.slice(0,2)}(${this.meta.layer}, ${contents})`;
     },
     contents() {
       if (this.meta.contents) {
