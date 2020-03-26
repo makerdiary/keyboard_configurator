@@ -94,6 +94,7 @@
       <span class="label-button">device</span>
       <button id="apply" :title="$t('download keymap to device')" @click="apply">
         <font-awesome-icon icon="download" size="lg" fixed-width />
+        <span v-if="isDirty">*</span>
       </button>
       <button
         v-if="false"
@@ -117,13 +118,7 @@
 </template>
 <script>
 import Vue from 'vue';
-import { createNamespacedHelpers } from 'vuex';
-const {
-  mapMutations,
-  mapActions,
-  mapState,
-  mapGetters
-} = createNamespacedHelpers('app');
+import { mapState, mapGetters, mapMutations, mapActions } from 'vuex';
 import first from 'lodash/first';
 import isUndefined from 'lodash/isUndefined';
 import escape from 'lodash/escape';
@@ -148,7 +143,7 @@ export default {
   name: 'bottom-controller',
   components: { ElectronBottomControls },
   computed: {
-    ...mapState([
+    ...mapState('app', [
       'keyboard',
       'layout',
       'previewRequested',
@@ -160,7 +155,8 @@ export default {
       'notes',
       'electron'
     ]),
-    ...mapGetters(['exportKeymapName', 'firmwareFile']),
+    ...mapGetters('keymap', ['isDirty']),
+    ...mapGetters('app', ['exportKeymapName', 'firmwareFile']),
     disableDownloadKeymap() {
       return !this.enableDownloads && this.keymapSourceURL !== '';
     },
@@ -190,8 +186,8 @@ export default {
     }
   },
   methods: {
-    ...mapMutations(['dismissPreview', 'stopListening', 'startListening']),
-    ...mapActions(['loadKeymapFromUrl']),
+    ...mapMutations('app', ['dismissPreview', 'stopListening', 'startListening']),
+    ...mapActions('app', ['loadKeymapFromUrl']),
     importUrlkeymap: function() {
       this.loadKeymapFromUrl(this.urlImport)
         .then(data => {
@@ -230,6 +226,7 @@ export default {
         notes: this.notes
       };
 
+      console.log(data);
       this.download(
         `${this.$store.getters['app/exportKeymapName']}.json`,
         JSON.stringify(data)
@@ -249,11 +246,7 @@ export default {
               var codes = Array.from(buf.subarray(index, index + 61));
               index += 64;
               if (codes.some(code => code != 0 && code != 1)) {
-                var data = tmk.fixLayout(...codes);
-                var names = data.map(code => tmk.toName(code));
-                // var names = codes.map((code) => tmk.toName(code));
-                console.log(data);
-                console.log(names);
+                var names = tmk.fixLayout(...codes).map((code) => tmk.toName(code));
                 keymap.push(names);
               }
           }
@@ -278,15 +271,14 @@ export default {
         keymap.push(layer);
       }
 
-      console.log(keymap);
       var n = 0;
       var write = function () {
         webusb.connect().then(device => {
           console.log('connected');
           var data = Uint16Array.from(tmk.fixLayout(...keymap[n]));
+          console.log(`write  ${n} layer`);
           console.log(data)
           device.write(n * 8 * 8 * 2, data).then(() => {
-            console.log(`write  ${n} layer`);
             n++;
             if (n < keymap.length) {
               write();
