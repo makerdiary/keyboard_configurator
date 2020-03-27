@@ -9,6 +9,7 @@ import vSelect from 'vue-select';
 import 'vue-select/dist/vue-select.css';
 import VueSlideoutPanel from 'vue2-slideout-panel';
 import VueI18n from 'vue-i18n';
+import Notifications from 'vue-notification';
 
 Vue.use(VueI18n);
 
@@ -65,6 +66,7 @@ Vue.component('Veil', Veil);
 Vue.component('v-select', vSelect);
 Vue.component('font-awesome-icon', FontAwesomeIcon);
 Vue.use(VueSlideoutPanel);
+Vue.use(Notifications);
 
 library.add(faDownload);
 library.add(faStar);

@@ -94,7 +94,7 @@
       <span class="label-button">device</span>
       <button id="apply" :title="$t('download keymap to device')" @click="apply">
         <font-awesome-icon icon="download" size="lg" fixed-width />
-        <span v-if="isDirty">*</span>
+        <!-- <span v-if="isDirty">*</span> -->
       </button>
       <button
         v-if="false"
@@ -235,6 +235,10 @@ export default {
     load() {
       webusb.connect().then(device => {
         console.log('connected');
+        // Vue.notify({
+        //   text: 'Connected to keyboard',
+        //   type: 'success'
+        // });
         device.read(0x0, 8*8*2*8).then(result => {
           device.close();
 
@@ -254,7 +258,21 @@ export default {
           console.log(keymap);
           if (keymap) {
             load_converted_keymap(keymap);
+            Vue.notify({
+              text: 'Loaded keymap from keyboard',
+              type: 'success'
+            });
+          } else {
+            Vue.notify({
+              text: 'Load a invalid keymap from keyboard',
+              type: 'warn'
+            });
           }
+        }).catch(error => {
+          Vue.notify({
+            text: 'Failed to load keymap from keyboard',
+            type: 'error'
+          });
         });
       });
     },
@@ -275,6 +293,10 @@ export default {
       var write = function () {
         webusb.connect().then(device => {
           console.log('connected');
+          // Vue.notify({
+          //   text: 'Connected to keyboard',
+          //   type: 'success'
+          // });
           var data = Uint16Array.from(tmk.fixLayout(...keymap[n]));
           console.log(`write  ${n} layer`);
           console.log(data)
@@ -283,8 +305,17 @@ export default {
             if (n < keymap.length) {
               write();
             } else {
+              Vue.notify({
+                text: 'Downloaded keymap to keyboard',
+                type: 'success'
+              });
               device.close();
             }
+          }).catch(error => {
+            Vue.notify({
+              text: 'Failed to download keymap to keyboard',
+              type: 'error'
+            });
           });
         });
       };

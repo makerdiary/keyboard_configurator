@@ -1,5 +1,6 @@
 <template>
   <div id="app" @click="dismiss">
+    <notifications position="top center"/>
     <span style="display:none">{{ revision }}</span>
     <div>
       <header v-if="false">
