@@ -271,7 +271,16 @@ const code2name = {
 
   0xe000: 'KC_BTLD',
 
-  0xfe20: 'RGB_MOD',
+  0xfef0: 'RGB_MOD',
+  0xfef1: 'RGB_RMOD',
+  0xfef2: 'RGB_HUI',
+  0xfef3: 'RGB_HUD',
+  0xfef4: 'RGB_SAI',
+  0xfef5: 'RGB_SAI',
+  0xfef6: 'RGB_VAI',
+  0xfef7: 'RGB_VAD',
+  0xfef8: 'RGB_SPI',
+  0xfef9: 'RGB_SPD',
 
   0xff00: 'KC_BT0',
   0xff01: 'KC_BT1',
@@ -742,7 +751,17 @@ const name2code = {
   KC_BOOTLOADER: 0xe000,
   KC_BTLD: 0xe000,
 
-  RGB_MOD: 0xfe20,
+  RGB_TOG: 0xd200,  // BL_TOGG
+  RGB_MOD: 0xfef0,
+  RGB_RMOD: 0xfef1,
+  RGB_HUI: 0xfef2,
+  RGB_HUD: 0xfef3,
+  RGB_SAI: 0xfef4,
+  RGB_SAI: 0xfef5,
+  RGB_VAI: 0xfef6,
+  RGB_VAD: 0xfef7,
+  RGB_SPI: 0xfef8,
+  RGB_SPD: 0xfef9,
 
   KC_BT0: 0xff00,
   KC_BT1: 0xff01,

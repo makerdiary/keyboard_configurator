@@ -247,14 +247,14 @@ export default [
   { name: 'Bright -', code: 'RGB_VAD', title: 'Decrease value' },
   { name: 'Effect +', code: 'RGB_SPI', title: 'Increase RGB effect speed' },
   { name: 'Effect -', code: 'RGB_SPD', title: 'Decrease RGB effect speed' },
-  { name: 'RGB Mode P', code: 'RGB_M_P', title: 'RGB Mode: Plain' },
-  { name: 'RGB Mode B', code: 'RGB_M_B', title: 'RGB Mode: Breathe' },
-  { name: 'RGB Mode R', code: 'RGB_M_R', title: 'RGB Mode: Rainbow' },
-  { name: 'RGB Mode SW', code: 'RGB_M_SW', title: 'RGB Mode: Swirl' },
-  { name: 'RGB Mode SN', code: 'RGB_M_SN', title: 'RGB Mode: Snake' },
-  { name: 'RGB Mode K', code: 'RGB_M_K', title: 'RGB Mode: Knight Rider' },
-  { name: 'RGB Mode X', code: 'RGB_M_X', title: 'RGB Mode: Christmas' },
-  { name: 'RGB Mode G', code: 'RGB_M_G', title: 'RGB Mode: Gradient' },
+  // { name: 'RGB Mode P', code: 'RGB_M_P', title: 'RGB Mode: Plain' },
+  // { name: 'RGB Mode B', code: 'RGB_M_B', title: 'RGB Mode: Breathe' },
+  // { name: 'RGB Mode R', code: 'RGB_M_R', title: 'RGB Mode: Rainbow' },
+  // { name: 'RGB Mode SW', code: 'RGB_M_SW', title: 'RGB Mode: Swirl' },
+  // { name: 'RGB Mode SN', code: 'RGB_M_SN', title: 'RGB Mode: Snake' },
+  // { name: 'RGB Mode K', code: 'RGB_M_K', title: 'RGB Mode: Knight Rider' },
+  // { name: 'RGB Mode X', code: 'RGB_M_X', title: 'RGB Mode: Christmas' },
+  // { name: 'RGB Mode G', code: 'RGB_M_G', title: 'RGB Mode: Gradient' },
 
 
   {
