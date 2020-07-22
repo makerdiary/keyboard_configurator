@@ -86,6 +86,7 @@ const getters = {
           _layer,
           function exportQMKKeycode(newLayer, key, i) {
             var keycode = key.code;
+            console.log(keycode);
             if (keycode) {
               if (keycode.endsWith('(kc)') || keycode.endsWith(',kc)')) {
                 if (key.contents) {
@@ -101,6 +102,13 @@ const getters = {
                 // add a special ANY marker to keycodes that were defined using ANY
                 // This will be stripped back off on import.
                 keycode = compiler ? key.text : `ANY(${key.text})`;
+              }
+              if (keycode === 'KC_TRNS' || keycode === 'KC_NO') {
+                keycode = keycode.replace('KC_TRNS', '___');
+                keycode = keycode.replace('KC_NO', '___');
+              }
+              if (keycode.startsWith('KC_')) {
+                keycode = keycode.replace('KC_', '')
               }
             } else {
               // eslint-disable-next-line

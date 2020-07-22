@@ -227,9 +227,28 @@ export default {
       };
 
       console.log(data);
+      var layerArray = []
+      for (let i = 0; i < data.layers.length; i++) {
+        layerArray.push('# layer ' + i +
+                          '\n' +
+                          '(' +
+                          '\n' +
+                          data.layers[i] +
+                          '\n' +
+                          '),' +
+                          '\n')
+      }
+      var pythonKeymap =  '# Keybaord: ' + data.keyboard + '\n' +
+                          '# Keymap: ' + data.keymap + '\n' +
+                          '# Layout: ' + data.layout + '\n' +
+                          '# Author: ' + data.author + '\n' +
+                          '# Notes: ' + data.notes + '\n' +
+                          'KEYMAP = (' + '\n' +
+                          layerArray.join("") +
+                        ')'
       this.download(
-        `${this.$store.getters['app/exportKeymapName']}.json`,
-        JSON.stringify(data)
+        `${this.$store.getters['app/exportKeymapName']}.py`,
+        pythonKeymap
       );
     },
     load() {
