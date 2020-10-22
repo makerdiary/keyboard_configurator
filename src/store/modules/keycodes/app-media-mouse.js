@@ -20,134 +20,144 @@ export default [
   { name: 'Find', code: 'KC_FIND', title: 'Find' },
   { width: 0 },
   {
-    name: 'Calc',
+    name: '🖩Calc',
     code: 'KC_CALC',
     title: 'Launch Calculator (Windows)'
   },
   {
-    name: 'Mail',
+    name: '📧',
     code: 'KC_MAIL',
     title: 'Launch Mail (Windows)'
   },
   {
-    name: 'Media Player',
+    name: '🎵',
     code: 'KC_MSEL',
     title: 'Launch Media Player (Windows)'
   },
   {
-    name: 'My PC',
+    name: '🖥️',
     code: 'KC_MYCM',
     title: 'Launch My Computer (Windows)'
   },
   { width: 250 },
   {
-    name: 'Browser Search',
+    name: '🌏🔍',
     code: 'KC_WSCH',
     title: 'Browser Search (Windows)',
     width: 1500
   },
   {
-    name: 'Browser Home',
+    name: '🌏🏠',
     code: 'KC_WHOM',
     title: 'Browser Home (Windows)',
     width: 1500
   },
   {
-    name: 'Browser Back',
+    name: '🌏←',
     code: 'KC_WBAK',
     title: 'Browser Back (Windows)',
     width: 1500
   },
   {
-    name: 'Browser Forward',
+    name: '🌏→',
     code: 'KC_WFWD',
     title: 'Browser Forward (Windows)',
     width: 1500
   },
   {
-    name: 'Browser Stop',
+    name: '🌏❌',
     code: 'KC_WSTP',
     title: 'Browser Stop (Windows)',
     width: 1500
   },
   {
-    name: 'Browser Refresh',
+    name: '🌏🔄',
     code: 'KC_WREF',
     title: 'Browser Refresh (Windows)',
     width: 1500
   },
   {
-    name: 'Browser Favorites',
+    name: '🌏❤',
     code: 'KC_WFAV',
     title: 'Browser Favorites (Windows)',
     width: 1500
   },
-  {
-    name: 'Brightness Up',
-    code: 'KC_BRIU',
-    title: 'Increase the brightness of screen (Laptop)',
-    width: 1500
-  },
-  {
-    name: 'Brightness Down',
-    code: 'KC_BRID',
-    title: 'Decrease the brightness of screen (Laptop)',
-    width: 1500
-  },
+  // {
+  //   name: 'Brightness Up',
+  //   code: 'KC_BRIU',
+  //   title: 'Increase the brightness of screen (Laptop)',
+  //   width: 1500
+  // },
+  // {
+  //   name: 'Brightness Down',
+  //   code: 'KC_BRID',
+  //   title: 'Decrease the brightness of screen (Laptop)',
+  //   width: 1500
+  // },
 
   { label: 'Multimedia Keys', width: 'label' },
 
-  { name: 'Previous', code: 'KC_MPRV', title: 'Previous Track' },
-  { name: 'Next', code: 'KC_MNXT', title: 'Next Track' },
-  { name: 'Mute', code: 'KC_MUTE', title: 'Mute Audio' },
-  { name: 'Vol -', code: 'KC_VOLD', title: 'Volume Down' },
-  { name: 'Vol +', code: 'KC_VOLU', title: 'Volume Up' },
-  { name: 'Media Stop', code: 'KC_MSTP', title: 'Media Stop' },
-  { name: 'Play', code: 'KC_MPLY', title: 'Play/Pause' },
+  { name: '⏮', code: 'KC_MPRV', title: 'Previous Track' },
+  { name: '⏭️', code: 'KC_MNXT', title: 'Next Track' },
+  { name: '🔇', code: 'KC_MUTE', title: 'Mute Audio' },
+  { name: '🔉', code: 'KC_VOLD', title: 'Volume Down' },
+  { name: '🔊', code: 'KC_VOLU', title: 'Volume Up' },
+  { name: '⏹', code: 'KC_MSTP', title: 'Media Stop' },
+  { name: '▶️', code: 'KC_MPLY', title: 'Play/Pause' },
   { width: 250 },
   {
-    name: 'Prev Track',
+    name: '⏪',
     code: 'KC_MRWD',
     title: 'Previous Track / Rewind (macOS)'
   },
   {
-    name: 'Next Track',
+    name: '⏩',
     code: 'KC_MFFD',
     title: 'Next Track / Fast Forward (macOS)'
   },
   { width: 250 },
-  { name: 'Eject', code: 'KC_EJCT', title: 'Eject (macOS)' },
+  { name: '⏏️', code: 'KC_EJCT', title: 'Eject (macOS)' },
+
+  { width: 250 },
+  { name: '🔆+', code: 'KC_DBUP', title: 'Display Brightness Up' },
+  { width: 250 },
+  { name: '🔅-', code: 'KC_DBDN', title: 'Display Brightness Down' },
 
   { label: 'Mouse Keys', width: 'label' },
 
-  { name: 'Mouse Up', code: 'KC_MS_U', title: 'Mouse Cursor Up' },
-  { name: 'Mouse Down', code: 'KC_MS_D', title: 'Mouse Cursor Down' },
-  { name: 'Mouse Left', code: 'KC_MS_L', title: 'Mouse Cursor Left' },
-  { name: 'Mouse Right', code: 'KC_MS_R', title: 'Mouse Cursor Right' },
+  { name: '🖱️ ↑', code: 'KC_MS_U', title: 'Mouse Cursor Up' },
+  { name: '🖱️ ↓', code: 'KC_MS_D', title: 'Mouse Cursor Down' },
+  { name: '🖱️ ←', code: 'KC_MS_L', title: 'Mouse Cursor Left' },
+  { name: '🖱️ →', code: 'KC_MS_R', title: 'Mouse Cursor Right' },
+  { name: '🖱️ ↖', code: 'KC_MS_UL', title: 'Mouse Cursor Up Left' },
+  { name: '🖱️ ↗', code: 'KC_MS_UR', title: 'Mouse Cursor Up Right' },
+  { name: '🖱️ ↙', code: 'KC_MS_DL', title: 'Mouse Cursor Down Left' },
+  { name: '🖱️ ↘', code: 'KC_MS_DR', title: 'Mouse Cursor Down Right' },
+
   { width: 250 },
-  { name: 'Mouse 1', code: 'KC_BTN1', title: 'Mouse Button 1' },
-  { name: 'Mouse 2', code: 'KC_BTN2', title: 'Mouse Button 2' },
-  { name: 'Mouse 3', code: 'KC_BTN3', title: 'Mouse Button 3' },
-  { name: 'Mouse 4', code: 'KC_BTN4', title: 'Mouse Button 4' },
-  { name: 'Mouse 5', code: 'KC_BTN5', title: 'Mouse Button 5' },
+  { name: '🖱️ 1', code: 'KC_BTN1', title: 'Mouse Button 1' },
+  { name: '🖱️ 2', code: 'KC_BTN2', title: 'Mouse Button 2' },
+  { name: '🖱️ 3', code: 'KC_BTN3', title: 'Mouse Button 3' },
+  { name: '🖱️ 4', code: 'KC_BTN4', title: 'Mouse Button 4' },
+  { name: '🖱️ 5', code: 'KC_BTN5', title: 'Mouse Button 5' },
   { width: 250 },
-  { name: 'Mouse Wheel Up', code: 'KC_WH_U', title: 'Mouse Wheel Up' },
-  { name: 'Mouse Wheel Down', code: 'KC_WH_D', title: 'Mouse Wheel Down' },
-  { name: 'Mouse Wheel Left', code: 'KC_WH_L', title: 'Mouse Wheel Left' },
-  { name: 'Mouse Wheel Right', code: 'KC_WH_R', title: 'Mouse Wheel Right' },
+  { name: '🖱️ ↕ ↑', code: 'KC_WH_U', title: 'Mouse Wheel Up' },
+  { name: '🖱️ ↕ ↓', code: 'KC_WH_D', title: 'Mouse Wheel Down' },
+  { name: '🖱️ ↔ ←', code: 'KC_WH_L', title: 'Mouse Wheel Left' },
+  { name: '🖱️ ↔ →', code: 'KC_WH_R', title: 'Mouse Wheel Right' },
   { width: 250 },
   {
-    name: 'Mouse Accel 0',
+    name: '🖱️ acc0',
     code: 'KC_ACL0',
     title: 'Set mouse acceleration to 0'
   },
   {
-    name: 'Mouse Accel 1',
+    name: '🖱️ acc1',
     code: 'KC_ACL1',
     title: 'Set mouse acceleration to 1'
   },
   {
-    name: 'Mouse Accel 2',
+    name: '🖱️ acc2',
     code: 'KC_ACL2',
     title: 'Set mouse acceleration to 2'
   },

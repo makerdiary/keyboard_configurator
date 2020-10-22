@@ -189,21 +189,21 @@ export default [
     title: 'Toggle USB HID'
   },
 
-  {
-    label: 'Backlight Settings',
-    width: 'label'
-  },
+  // {
+  //   label: 'Backlight Settings',
+  //   width: 'label'
+  // },
 
-  {
-    name: 'BL Toggle',
-    code: 'BL_TOGG',
-    title: 'Turn the backlight on or off'
-  },
-  {
-    name: 'BL Cycle',
-    code: 'BL_STEP',
-    title: 'Cycle through backlight levels'
-  },
+  // {
+  //   name: 'BL Toggle',
+  //   code: 'BL_TOGG',
+  //   title: 'Turn the backlight on or off'
+  // },
+  // {
+  //   name: 'BL Cycle',
+  //   code: 'BL_STEP',
+  //   title: 'Cycle through backlight levels'
+  // },
   // {
   //   name: 'BL On',
   //   code: 'BL_ON',
@@ -214,16 +214,16 @@ export default [
   //   code: 'BL_OFF',
   //   title: 'Turn the backlight off'
   // },
-  {
-    name: 'BL +',
-    code: 'BL_INC',
-    title: 'Increase the backlight level'
-  },
-  {
-    name: 'BL -',
-    code: 'BL_DEC',
-    title: 'Decrease the backlight level'
-  },
+  // {
+  //   name: 'BL +',
+  //   code: 'BL_INC',
+  //   title: 'Increase the backlight level'
+  // },
+  // {
+  //   name: 'BL -',
+  //   code: 'BL_DEC',
+  //   title: 'Decrease the backlight level'
+  // },
   // {
   //   name: 'BL Breath',
   //   code: 'BL_BRTG',
@@ -247,15 +247,14 @@ export default [
   { name: 'Bright -', code: 'RGB_VAD', title: 'Decrease value' },
   { name: 'Effect +', code: 'RGB_SPI', title: 'Increase RGB effect speed' },
   { name: 'Effect -', code: 'RGB_SPD', title: 'Decrease RGB effect speed' },
-  // { name: 'RGB Mode P', code: 'RGB_M_P', title: 'RGB Mode: Plain' },
-  // { name: 'RGB Mode B', code: 'RGB_M_B', title: 'RGB Mode: Breathe' },
-  // { name: 'RGB Mode R', code: 'RGB_M_R', title: 'RGB Mode: Rainbow' },
-  // { name: 'RGB Mode SW', code: 'RGB_M_SW', title: 'RGB Mode: Swirl' },
-  // { name: 'RGB Mode SN', code: 'RGB_M_SN', title: 'RGB Mode: Snake' },
+  { name: 'RGB Mode X', code: 'RGB_XXX', title: 'RGB Mode: X' },
+  { name: 'RGB Mode Y', code: 'RGB_YYY', title: 'RGB Mode: Y' },
+  { name: 'RGB Mode Z', code: 'RGB_ZZZ', title: 'RGB Mode: Z' },
+  { name: 'RGB Mode Beacon', code: 'RGB_BCN', title: 'RGB Mode: Beacon' },
+  { name: 'RGB Mode Wave', code: 'RGB_WAV', title: 'RGB Mode: Wave' },
   // { name: 'RGB Mode K', code: 'RGB_M_K', title: 'RGB Mode: Knight Rider' },
   // { name: 'RGB Mode X', code: 'RGB_M_X', title: 'RGB Mode: Christmas' },
   // { name: 'RGB Mode G', code: 'RGB_M_G', title: 'RGB Mode: Gradient' },
-
 
   {
     label: 'Other Settings',
